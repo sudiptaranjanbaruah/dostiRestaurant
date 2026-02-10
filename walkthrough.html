@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dosti Restaurant - Website Walkthrough</title>
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 2cm;
+            }
+            body {
+                font-size: 11pt;
+            }
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+            table, figure, img {
+                page-break-inside: avoid;
+            }
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #fff;
+        }
+        
+        h1 {
+            color: #C85A3E;
+            border-bottom: 4px solid #C85A3E;
+            padding-bottom: 15px;
+            margin-top: 40px;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+        
+        h1:first-of-type {
+            margin-top: 0;
+        }
+        
+        h2 {
+            color: #5D4E37;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            font-weight: 600;
+            border-left: 5px solid #C85A3E;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #2C1810;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+        
+        hr {
+            border: none;
+            border-top: 2px solid #C85A3E;
+            margin: 40px 0;
+        }
+        
+        p {
+            margin: 12px 0;
+            text-align: justify;
+        }
+        
+        strong {
+            color: #C85A3E;
+            font-weight: 600;
+        }
+        
+        em {
+            color: #5D4E37;
+        }
+        
+        code {
+            background-color: #f5f5f5;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #d63384;
+        }
+        
+        pre {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 6px;
+            overflow-x: auto;
+            border-left: 4px solid #C85A3E;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: #333;
+        }
+        
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+        
+        ul ul, ol ol {
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 14px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #C85A3E;
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        blockquote {
+            border-left: 5px solid #C85A3E;
+            padding-left: 25px;
+            margin-left: 0;
+            margin-right: 0;
+            font-style: italic;
+            color: #666;
+            background-color: #fafafa;
+            padding: 15px 15px 15px 25px;
+            border-radius: 4px;
+        }
+        
+        a {
+            color: #C85A3E;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+        
+        a:hover {
+            border-bottom-color: #C85A3E;
+        }
+        
+        .header-subtitle {
+            color: #666;
+            font-size: 1.2em;
+            font-weight: 400;
+            margin-top: -10px;
+            margin-bottom: 30px;
+        }
+        
+        /* Print button */
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #C85A3E;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(200, 90, 62, 0.3);
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+        
+        .print-button:hover {
+            background: #a84a30;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(200, 90, 62, 0.4);
+        }
+        
+        @media print {
+            .print-button {
+                display: none;
+            }
+        }
+        
+        /* Emoji styling */
+        .emoji {
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button" onclick="window.print()">🖨️ Print to PDF</button>
+    
+    <h1>Dosti Restaurant - Website Walkthrough</h1>
+<p><strong>A Modern Restaurant Website with Unique Scroll Animations</strong></p>
+<hr />
+<h2>🎯 Overview</h2>
+<p>Welcome to your new Dosti Restaurant website! This document provides a complete walkthrough of all features, sections, and unique elements that make your website stand out.</p>
+<p><strong>Website URL:</strong> https://github.com/sudiptaranjanbaruah/dostiRestaurant</p>
+<hr />
+<h2>✨ Unique Features</h2>
+<h3>1. <strong>Animated Background Scroll</strong></h3>
+<p>As visitors scroll through your website, they'll experience a stunning burger animation that plays frame-by-frame. This creates an engaging, dynamic experience that keeps visitors interested.</p>
+<ul>
+<li><strong>121 animation frames</strong> that smoothly transition as users scroll</li>
+<li>Creates a cinematic, Apple-style product page effect</li>
+<li>Fully optimized for smooth performance</li>
+</ul>
+<h3>2. <strong>Custom Animated Scrollbar</strong></h3>
+<p>Instead of a traditional scrollbar, your website features a unique french fry animation on the right side that progresses as users scroll.</p>
+<ul>
+<li><strong>96 french fry frames</strong> that animate with scroll position</li>
+<li>Medium-sized (60x300px) positioned on the right side</li>
+<li>Non-intrusive and adds personality to the browsing experience</li>
+</ul>
+<h3>3. <strong>Warm Editorial Minimal Design</strong></h3>
+<p>The website uses a sophisticated design aesthetic with:<br />
+- Warm color palette (terracotta, cream, olive tones)<br />
+- Glassmorphism effects (frosted glass cards)<br />
+- Clean typography with Playfair Display and Inter fonts<br />
+- Smooth animations and transitions throughout</p>
+<hr />
+<h2>📱 Website Sections</h2>
+<h3><strong>1. Hero Section</strong></h3>
+<p>The first thing visitors see when they land on your website.</p>
+<p><strong>Features:</strong><br />
+- Large, eye-catching headline: "Dosti - A New Face of Pudina"<br />
+- Tagline: "Believe in Friendship"<br />
+- Two prominent call-to-action buttons:<br />
+  - "Order Online Now!" - Links to WhatsApp ordering<br />
+  - "View Menu" - Scrolls to menu section<br />
+- Animated scroll indicator encouraging exploration<br />
+- Full-screen animated burger background</p>
+<p><strong>Purpose:</strong> Immediately capture attention and guide visitors to take action.</p>
+<hr />
+<h3><strong>2. About Section</strong></h3>
+<p>Tells your restaurant's story and builds trust.</p>
+<p><strong>Content:</strong><br />
+- Brief history: "For over 15 years, Dosti has been serving authentic cuisine..."<br />
+- Restaurant philosophy and commitment to quality<br />
+- Three key highlights displayed prominently:<br />
+  - <strong>15+ Years of Excellence</strong><br />
+  - <strong>50+ Signature Dishes</strong><br />
+  - <strong>100% Fresh Ingredients</strong></p>
+<p><strong>Design:</strong> Split layout with text on left and image on right, creating visual balance.</p>
+<hr />
+<h3><strong>3. Menu Section</strong> ⭐ <em>Most Important</em></h3>
+<p>Your complete menu organized into 10 easy-to-navigate categories.</p>
+<p><strong>Categories:</strong><br />
+1. <strong>Rolls</strong> (7 items)<br />
+   - Veg Roll (₹50)<br />
+   - Veg Cheese Roll (₹60)<br />
+   - Egg Roll (₹60)<br />
+   - Chicken Roll (₹70)<br />
+   - Chicken Cheese Roll (₹80)<br />
+   - Paneer Roll (₹70)<br />
+   - Baba Roll (₹90)</p>
+<ol>
+<li><strong>Chowmein</strong> (5 items)</li>
+<li>Veg Chowmein (Half: ₹30 | Full: ₹50)</li>
+<li>Egg Chowmein (Half: ₹40 | Full: ₹60)</li>
+<li>Chicken Chowmein (Half: ₹60 | Full: ₹90)</li>
+<li>Mix Chowmein (₹110)</li>
+<li>
+<p>Gravy Chicken Chowmein (₹110)</p>
+</li>
+<li>
+<p><strong>Rice &amp; Biryani</strong> (7 items)</p>
+</li>
+<li>Veg Fried Rice (Half: ₹40 | Full: ₹50)</li>
+<li>Chicken Fried Rice (Half: ₹60 | Full: ₹100)</li>
+<li>Mixed Fried Rice (₹110)</li>
+<li>Chicken Biryani (Half: ₹90 | Full: ₹120)</li>
+<li>Egg Biryani (Half: ₹70 | Full: ₹100)</li>
+<li>Veg Pulao (₹70)</li>
+<li>
+<p>Chicken Pulao (₹100)</p>
+</li>
+<li>
+<p><strong>Pizza</strong> (4 items)</p>
+</li>
+<li>Margherita Pizza (₹130)</li>
+<li>Paneer Corn Pizza (₹150)</li>
+<li>Chicken Classic Pizza (₹130)</li>
+<li>
+<p>Chicken Corn Pizza (₹150)</p>
+</li>
+<li>
+<p><strong>Burgers</strong> (4 items)</p>
+</li>
+<li>Veg Burger (₹50)</li>
+<li>Veg Cheese Burger (₹60)</li>
+<li>Chicken Burger (₹70)</li>
+<li>
+<p>Chicken Cheese Burger (₹80)</p>
+</li>
+<li>
+<p><strong>Fried Chicken</strong> (6 items)</p>
+</li>
+<li>Chicken Wings 4pc (₹80)</li>
+<li>Hot &amp; Crispy 3pc (₹100)</li>
+<li>Chicken Popcorn (₹120)</li>
+<li>Chicken Nuggets 6pc (₹120)</li>
+<li>Classic French Fries (₹80)</li>
+<li>
+<p>Peri Peri French Fries (₹90)</p>
+</li>
+<li>
+<p><strong>Starters</strong> (5 items)</p>
+</li>
+<li>Chilli Paneer (₹180)</li>
+<li>Paneer Manchurian (₹180)</li>
+<li>Chilli Chicken Dry (₹180)</li>
+<li>Chilli Chicken Gravy (₹200)</li>
+<li>
+<p>Drums of Heaven (₹200)</p>
+</li>
+<li>
+<p><strong>Beverages</strong> (7 items)</p>
+</li>
+<li>Cold Coffee (₹70)</li>
+<li>Chocolate Shake (₹70)</li>
+<li>Oreo Shake (₹80)</li>
+<li>Blue Mojito (₹80)</li>
+<li>Mint Mojito (₹80)</li>
+<li>Tea (₹15)</li>
+<li>
+<p>Coffee (₹20)</p>
+</li>
+<li>
+<p><strong>Combos</strong> (5 items)</p>
+</li>
+<li>Veg Pulao Combo (₹100)</li>
+<li>Paneer Butter Masala Combo (₹100)</li>
+<li>Chicken Curry Combo (₹100)</li>
+<li>Chilli Paneer Combo (₹100)</li>
+<li>Chilli Chicken Combo (₹100)</li>
+</ol>
+<p><strong>Features:</strong><br />
+- <strong>Category Filtering:</strong> Click any category tab to show only those items<br />
+- <strong>Veg/Non-Veg Indicators:</strong> Green (🟢) for vegetarian, Brown (🟤) for non-vegetarian<br />
+- <strong>Half/Full Portions:</strong> Clearly displayed where applicable<br />
+- <strong>Glassmorphism Cards:</strong> Each menu item has a beautiful frosted glass effect<br />
+- <strong>Responsive Grid:</strong> Automatically adjusts for mobile, tablet, and desktop</p>
+<hr />
+<h3><strong>4. Chef's Specials</strong></h3>
+<p>Highlights your signature dishes with beautiful imagery.</p>
+<p><strong>Featured Items:</strong><br />
+1. <strong>Royal Biryani Platter</strong> (₹550) - Featured<br />
+2. <strong>Tandoori Mixed Grill</strong> (₹480) - Popular<br />
+3. <strong>Chocolate Indulgence</strong> (₹280) - New</p>
+<p><strong>Design:</strong> Large cards with images, descriptions, prices, and "Order Now" buttons.</p>
+<hr />
+<h3><strong>5. Order Online / Reservation</strong></h3>
+<p>Makes it easy for customers to place orders.</p>
+<p><strong>WhatsApp Integration:</strong><br />
+- Direct link to WhatsApp: <strong>+91 97062 87811</strong><br />
+- Secondary number: <strong>+91 60010 52700</strong><br />
+- One-click ordering through WhatsApp</p>
+<p><strong>Why WhatsApp?</strong><br />
+- Familiar platform for Indian customers<br />
+- Easy communication<br />
+- No complex ordering system needed<br />
+- Personal touch with direct messaging</p>
+<hr />
+<h3><strong>6. Testimonials</strong></h3>
+<p>Builds trust through customer reviews.</p>
+<p><strong>Featured Reviews:</strong><br />
+- Priya Sharma (Food Blogger) - 5 stars<br />
+- Rahul Verma (Regular Customer) - 5 stars<br />
+- Anjali Patel (Food Enthusiast) - 5 stars</p>
+<p><strong>Design:</strong> Beautiful cards with star ratings and customer photos.</p>
+<hr />
+<h3><strong>7. Gallery</strong></h3>
+<p>Visual showcase of your restaurant and dishes.</p>
+<p><strong>Content:</strong><br />
+- Restaurant ambiance<br />
+- Chef's special dishes<br />
+- Tandoori preparations<br />
+- Dessert platters<br />
+- Interior dining areas<br />
+- Signature cocktails</p>
+<p><strong>Layout:</strong> Responsive grid that looks great on all devices.</p>
+<hr />
+<h3><strong>8. Contact &amp; Location</strong></h3>
+<p>Makes it easy for customers to find and reach you.</p>
+<p><strong>Information Displayed:</strong><br />
+- <strong>Address:</strong> Infront of GL Mart, Near D.K College, Mirza, Kamrup, Assam, 781125<br />
+- <strong>Phone Numbers:</strong><br />
+  - +91 97062 87811<br />
+  - +91 60010 52700<br />
+- <strong>Business Hours:</strong><br />
+  - Monday - Friday: 11:00 AM - 11:00 PM<br />
+  - Saturday - Sunday: 10:00 AM - 12:00 AM<br />
+- <strong>Email:</strong> [To be added]</p>
+<p><strong>Google Maps Integration:</strong><br />
+- Interactive map showing exact location<br />
+- Customers can get directions with one click</p>
+<hr />
+<h3><strong>9. Footer</strong></h3>
+<p>Professional footer with important links and information.</p>
+<p><strong>Sections:</strong><br />
+- Restaurant description and credits<br />
+- Quick navigation links<br />
+- Social media links (Facebook, Instagram, Twitter, YouTube)<br />
+- Copyright information</p>
+<hr />
+<h2>🎨 Design Elements</h2>
+<h3><strong>Color Palette</strong></h3>
+<ul>
+<li><strong>Primary:</strong> Terracotta (#C85A3E) - Warm, inviting</li>
+<li><strong>Secondary:</strong> Olive Green (#5D4E37) - Earthy, natural</li>
+<li><strong>Background:</strong> Cream (#FAF7F2) - Soft, clean</li>
+<li><strong>Text:</strong> Dark Brown (#2C1810) - Easy to read</li>
+</ul>
+<h3><strong>Typography</strong></h3>
+<ul>
+<li><strong>Headings:</strong> Playfair Display - Elegant, editorial style</li>
+<li><strong>Body Text:</strong> Inter - Clean, modern, highly readable</li>
+</ul>
+<h3><strong>Visual Effects</strong></h3>
+<ul>
+<li><strong>Glassmorphism:</strong> Frosted glass effect on cards</li>
+<li><strong>Smooth Animations:</strong> Hover effects, scroll animations</li>
+<li><strong>Responsive Design:</strong> Perfect on mobile, tablet, and desktop</li>
+</ul>
+<hr />
+<h2>📱 Mobile Optimization</h2>
+<p>Your website is fully responsive and looks great on all devices:</p>
+<h3><strong>Mobile Features:</strong></h3>
+<ul>
+<li>Hamburger menu for easy navigation</li>
+<li>Touch-friendly buttons and links</li>
+<li>Optimized images for faster loading</li>
+<li>Readable text without zooming</li>
+<li>Easy-to-tap WhatsApp ordering button</li>
+</ul>
+<h3><strong>Performance:</strong></h3>
+<ul>
+<li>Fast loading times</li>
+<li>Optimized animations</li>
+<li>Lazy loading for images</li>
+<li>Efficient code structure</li>
+</ul>
+<hr />
+<h2>🚀 How Customers Will Use Your Website</h2>
+<h3><strong>Typical User Journey:</strong></h3>
+<ol>
+<li><strong>Landing</strong> → Sees animated burger background and hero section</li>
+<li><strong>Exploration</strong> → Scrolls down, experiencing the scroll animations</li>
+<li><strong>Menu Browsing</strong> → Clicks category tabs to filter menu items</li>
+<li><strong>Decision</strong> → Finds desired items with clear prices</li>
+<li><strong>Ordering</strong> → Clicks WhatsApp button to place order</li>
+<li><strong>Additional Info</strong> → Checks location, hours, or reads reviews</li>
+</ol>
+<h3><strong>Key Actions:</strong></h3>
+<ul>
+<li><strong>View Menu</strong> - Most common action</li>
+<li><strong>Order via WhatsApp</strong> - Primary conversion goal</li>
+<li><strong>Check Location</strong> - For dine-in customers</li>
+<li><strong>Browse Gallery</strong> - Visual appeal</li>
+</ul>
+<hr />
+<h2>🔧 Technical Specifications</h2>
+<h3><strong>Technologies Used:</strong></h3>
+<ul>
+<li><strong>HTML5</strong> - Modern, semantic structure</li>
+<li><strong>CSS3</strong> - Advanced styling and animations</li>
+<li><strong>Vanilla JavaScript</strong> - No dependencies, fast performance</li>
+<li><strong>Canvas API</strong> - For scroll animations</li>
+</ul>
+<h3><strong>Browser Compatibility:</strong></h3>
+<ul>
+<li>✅ Chrome (recommended)</li>
+<li>✅ Firefox</li>
+<li>✅ Safari</li>
+<li>✅ Edge</li>
+<li>✅ Mobile browsers</li>
+</ul>
+<h3><strong>File Structure:</strong></h3>
+<pre><code>dosti/
+├── index.html                 # Main website file
+├── style.css                  # All styling
+├── script.js                  # Interactive features
+├── images/                    # Restaurant images
+├── ezgif-76f8bb76ada1dbc7-jpg/ # Burger animation frames (121)
+├── french fry/                # Scrollbar animation frames (96)
+└── Documentation files
+</code></pre>
+<hr />
+<h2>📊 Website Statistics</h2>
+<ul>
+<li><strong>Total Files:</strong> 255</li>
+<li><strong>Animation Frames:</strong> 217 (121 burger + 96 french fry)</li>
+<li><strong>Menu Items:</strong> 50+</li>
+<li><strong>Menu Categories:</strong> 10</li>
+<li><strong>Sections:</strong> 9</li>
+<li><strong>Total Size:</strong> 46.67 MB</li>
+</ul>
+<hr />
+<h2>🎯 Business Benefits</h2>
+<h3><strong>For Customers:</strong></h3>
+<ul>
+<li>✅ Easy menu browsing with filtering</li>
+<li>✅ Clear pricing and portion information</li>
+<li>✅ Quick WhatsApp ordering</li>
+<li>✅ Visual appeal with animations</li>
+<li>✅ Mobile-friendly experience</li>
+</ul>
+<h3><strong>For Your Business:</strong></h3>
+<ul>
+<li>✅ Professional online presence</li>
+<li>✅ 24/7 menu availability</li>
+<li>✅ Reduced phone inquiries about menu/prices</li>
+<li>✅ Direct ordering channel via WhatsApp</li>
+<li>✅ Showcases your brand personality</li>
+<li>✅ Builds trust with testimonials</li>
+<li>✅ Easy to find with Google Maps integration</li>
+</ul>
+<hr />
+<h2>📞 Support &amp; Updates</h2>
+<h3><strong>Updating Menu Items:</strong></h3>
+<p>To update prices or add new items, refer to the <code>CUSTOMIZATION_GUIDE.md</code> file included with your website.</p>
+<h3><strong>Common Updates:</strong></h3>
+<ul>
+<li>Adding new menu items</li>
+<li>Changing prices</li>
+<li>Updating contact information</li>
+<li>Adding new images to gallery</li>
+<li>Modifying business hours</li>
+</ul>
+<h3><strong>Technical Support:</strong></h3>
+<p>For technical assistance or questions about the website, contact your developer.</p>
+<hr />
+<h2>🌟 What Makes This Website Special</h2>
+<ol>
+<li><strong>Unique Animations:</strong> No other restaurant website in your area has scroll-based burger and french fry animations</li>
+<li><strong>Complete Menu:</strong> All 50+ items clearly organized and easy to browse</li>
+<li><strong>Modern Design:</strong> Professional, warm aesthetic that reflects your brand</li>
+<li><strong>Mobile-First:</strong> Perfect experience on smartphones where most customers browse</li>
+<li><strong>Easy Ordering:</strong> One-click WhatsApp integration for instant orders</li>
+<li><strong>Fast Performance:</strong> Optimized for quick loading even with animations</li>
+</ol>
+<hr />
+<h2>🎉 Conclusion</h2>
+<p>Your Dosti Restaurant website is now live and ready to attract customers! The combination of unique scroll animations, comprehensive menu, and easy ordering makes it a powerful tool for your business.</p>
+<p><strong>Key Takeaways:</strong><br />
+- Modern, professional design that stands out<br />
+- Complete menu with 10 categories and 50+ items<br />
+- Easy WhatsApp ordering integration<br />
+- Fully responsive for all devices<br />
+- Unique animations that create memorable experience</p>
+<p><strong>Next Steps:</strong><br />
+1. Share the website link with customers<br />
+2. Add the link to your social media profiles<br />
+3. Include it on business cards and flyers<br />
+4. Monitor customer feedback<br />
+5. Update menu items as needed</p>
+<hr />
+<p><strong>Thank you for choosing our services!</strong></p>
+<p>For any questions or support, please reach out to your developer.</p>
+<hr />
+<p><em>Document Version: 1.0</em><br />
+<em>Last Updated: February 10, 2026</em></p>
+    
+    <script>
+        // Add print keyboard shortcut
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                e.preventDefault();
+                window.print();
+            }
+        });
+    </script>
+</body>
+</html>
