@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Dosti Restaurant - Experience authentic flavors and warm hospitality. Reserve your table today for an unforgettable dining experience.">
+    <meta name="keywords" content="restaurant, dining, food, cuisine, reservations">
+    <title>Dosti Restaurant | Authentic Cuisine & Fine Dining</title>
+
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Scroll Animation Canvas - Full Page Background -->
+    <canvas id="scrollCanvas"></canvas>
+
+    <!-- Custom Animated Scrollbar -->
+    <div id="customScrollbar">
+        <canvas id="scrollbarCanvas"></canvas>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="nav-logo">
+                <img src="images/logo.jpg" alt="Dosti Restaurant Logo" width="1000" heigt="1500">
+                <span>Dosti</span>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#specials">Specials</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#reservation" class="nav-cta">Order Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- 1. HERO SECTION -->
+
+        <section class="hero" id="home">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+
+                <div class="hero-card glass">
+                    <h1 class="hero-title">Dosti <br>A New Face of Pudina</br></h1>
+                    <p class="hero-tagline">"Believe in Friendship"</p>
+                    <div class="hero-cta-group">
+                        <a href="#reservation" class="btn btn-primary">Order Online Now!</a>
+                        <a href="#menu" class="btn btn-secondary">View Menu</a>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll to explore</span>
+                <div class="scroll-arrow"></div>
+            </div>
+        </section>
+
+        <!-- 2. ABOUT SECTION -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-content">
+                        <h2 class="section-title">About Us</h2>
+                        <p class="about-text">
+                            For over 15 years, Dosti has been serving authentic cuisine crafted with passion and
+                            tradition.
+                            Our chefs blend time-honored recipes with contemporary techniques to create unforgettable
+                            dining experiences.
+                        </p>
+                        <p class="about-text">
+                            We believe in using only the finest, locally-sourced ingredients to bring you dishes that
+                            celebrate
+                            the rich flavors of our heritage while embracing modern culinary innovation.
+                        </p>
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <span class="highlight-number">15+</span>
+                                <span class="highlight-label">Years of Excellence</span>
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-number">50+</span>
+                                <span class="highlight-label">Signature Dishes</span>
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-number">100%</span>
+                                <span class="highlight-label">Fresh Ingredients</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="images/hero-bg.jpg" alt="Dosti Restaurant Interior" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. MENU SECTION -->
+        <section class="menu" id="menu">
+            <div class="container">
+                <h2 class="section-title center">Our Menu</h2>
+                <p class="section-subtitle">Explore our delicious selection</p>
+
+                <div class="menu-categories">
+                    <button class="menu-tab active" data-category="all">All</button>
+                    <button class="menu-tab" data-category="rolls">Rolls</button>
+                    <button class="menu-tab" data-category="chowmein">Chowmein</button>
+                    <button class="menu-tab" data-category="rice">Rice & Biryani</button>
+                    <button class="menu-tab" data-category="pizza">Pizza</button>
+                    <button class="menu-tab" data-category="burger">Burgers</button>
+                    <button class="menu-tab" data-category="chicken">Fried Chicken</button>
+                    <button class="menu-tab" data-category="starters">Starters</button>
+                    <button class="menu-tab" data-category="beverages">Beverages</button>
+                    <button class="menu-tab" data-category="combos">Combos</button>
+                </div>
+
+                <div class="menu-grid">
+                    <!-- ROLLS -->
+                    <div class="menu-item glass" data-category="rolls">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Veg Roll <span class="veg-indicator" title="Vegetarian">🟢</span>
+                            </h3>
+                            <span class="menu-item-price">₹50</span>
+                        </div>
+                        <p class="menu-item-description">Fresh vegetables wrapped in soft paratha</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="rolls">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Veg Cheese Roll <span class="veg-indicator"
+                                    title="Vegetarian">🟢</span></h3>
+                            <span class="menu-item-price">₹60</span>
+                        </div>
+                        <p class="menu-item-description">Veg roll with melted cheese</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="rolls">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Egg Roll <span class="non-veg-indicator"
+                                    title="Non-Vegetarian">🟤</span></h3>
+                            <span class="menu-item-price">₹60</span>
+                        </div>
+                        <p class="menu-item-description">Scrambled eggs with spices in paratha</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="rolls">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Chicken Roll <span class="non-veg-indicator"
+                                    title="Non-Vegetarian">🟤</span></h3>
+                            <span class="menu-item-price">₹70</span>
+                        </div>
+                        <p class="menu-item-description">Spicy chicken pieces wrapped in paratha</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="rolls">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Chicken Cheese Roll <span class="non-veg-indicator"
+                                    title="Non-Vegetarian">🟤</span></h3>
+                            <span class="menu-item-price">₹80</span>
+                        </div>
+                        <p class="menu-item-description">Chicken roll with melted cheese</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="rolls">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Paneer Roll <span class="veg-indicator"
+                                    title="Vegetarian">🟢</span></h3>
+                            <span class="menu-item-price">₹70</span>
+                        </div>
+                        <p class="menu-item-description">Grilled paneer with vegetables</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="rolls">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Baba Roll <span class="non-veg-indicator"
+                                    title="Non-Vegetarian">🟤</span></h3>
+                            <span class="menu-item-price">₹90</span>
+                        </div>
+                        <p class="menu-item-description">Our special signature roll</p>
+                    </div>
+
+                    <!-- CHOWMEIN -->
+                    <div class="menu-item glass" data-category="chowmein">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Veg Chowmein <span class="veg-indicator"
+                                    title="Vegetarian">🟢</span></h3>
+                            <span class="menu-item-price">Half: ₹30 | Full: ₹50</span>
+                        </div>
+                        <p class="menu-item-description">Stir-fried noodles with fresh vegetables</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="chowmein">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Egg Chowmein <span class="non-veg-indicator"
+                                    title="Non-Vegetarian">🟤</span></h3>
+                            <span class="menu-item-price">Half: ₹40 | Full: ₹60</span>
+                        </div>
+                        <p class="menu-item-description">Noodles with scrambled eggs</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="chowmein">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Chicken Chowmein <span class="non-veg-indicator"
+                                    title="Non-Vegetarian">🟤</span></h3>
+                            <span class="menu-item-price">Half: ₹60 | Full: ₹90</span>
+                        </div>
+                        <p class="menu-item-description">Noodles with chicken pieces</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="chowmein">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Mix Chowmein <span class="non-veg-indicator"
+                                    title="Non-Vegetarian">🟤</span></h3>
+                            <span class="menu-item-price">₹110</span>
+                        </div>
+                        <p class="menu-item-description">Noodles with chicken, egg & vegetables</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="chowmein">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Gravy Chicken Chowmein <span class="non-veg-indicator"
+                                    title="Non-Vegetarian">🟤</span></h3>
+                            <span class="menu-item-price">₹110</span>
+                        </div>
+                        <p class="menu-item-description">Noodles in spicy chicken gravy</p>
+                    </div>
+
+                    <!-- RICE & BIRYANI -->
+                    <div class="menu-item glass" data-category="rice">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Veg Fried Rice <span class="veg-indicator"
+                                    title="Vegetarian">🟢</span></h3>
+                            <span class="menu-item-price">Half: ₹40 | Full: ₹50</span>
+                        </div>
+                        <p class="menu-item-description">Fried rice with mixed vegetables</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="rice">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Chicken Fried Rice <span class="non-veg-indicator"
+                                    title="Non-Vegetarian">🟤</span></h3>
+                            <span class="menu-item-price">Half: ₹60 | Full: ₹100</span>
+                        </div>
+                        <p class="menu-item-description">Fried rice with chicken pieces</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="rice">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Mixed Fried Rice <span class="non-veg-indicator"
+                                    title="Non-Vegetarian">🟤</span></h3>
+                            <span class="menu-item-price">₹110</span>
+                        </div>
+                        <p class="menu-item-description">Rice with chicken, egg & vegetables</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="rice">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Chicken Biryani <span class="non-veg-indicator"
+                                    title="Non-Vegetarian">🟤</span></h3>
+                            <span class="menu-item-price">Half: ₹90 | Full: ₹120</span>
+                        </div>
+                        <p class="menu-item-description">Aromatic basmati rice with chicken</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="rice">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Egg Biryani <span class="non-veg-indicator"
+                                    title="Non-Vegetarian">🟤</span></h3>
+                            <span class="menu-item-price">Half: ₹70 | Full: ₹100</span>
+                        </div>
+                        <p class="menu-item-description">Biryani with boiled eggs</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="rice">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Veg Pulao <span class="veg-indicator"
+                                    title="Vegetarian">🟢</span></h3>
+                            <span class="menu-item-price">₹70</span>
+                        </div>
+                        <p class="menu-item-description">Fragrant rice with vegetables</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="rice">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Chicken Pulao <span class="non-veg-indicator"
+                                    title="Non-Vegetarian">🟤</span></h3>
+                            <span class="menu-item-price">₹100</span>
+                        </div>
+                        <p class="menu-item-description">Pulao with chicken pieces</p>
+                    </div>
+
+                    <!-- PIZZA -->
+                    <div class="menu-item glass" data-category="pizza">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Margherita Pizza <span class="veg-indicator"
+                                    title="Vegetarian">🟢</span></h3>
+                            <span class="menu-item-price">₹130</span>
+                        </div>
+                        <p class="menu-item-description">Classic cheese pizza</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="pizza">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Paneer Corn Pizza <span class="veg-indicator"
+                                    title="Vegetarian">🟢</span></h3>
+                            <span class="menu-item-price">₹150</span>
+                        </div>
+                        <p class="menu-item-description">Pizza with paneer and sweet corn</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="pizza">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Chicken Classic Pizza <span class="non-veg-indicator"
+                                    title="Non-Vegetarian">🟤</span></h3>
+                            <span class="menu-item-price">₹130</span>
+                        </div>
+                        <p class="menu-item-description">Pizza with chicken toppings</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="pizza">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Chicken Corn Pizza <span class="non-veg-indicator"
+                                    title="Non-Vegetarian">🟤</span></h3>
+                            <span class="menu-item-price">₹150</span>
+                        </div>
+                        <p class="menu-item-description">Pizza with chicken and corn</p>
+                    </div>
+
+                    <!-- BURGERS -->
+                    <div class="menu-item glass" data-category="burger">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Veg Burger <span class="veg-indicator"
+                                    title="Vegetarian">🟢</span></h3>
+                            <span class="menu-item-price">₹50</span>
+                        </div>
+                        <p class="menu-item-description">Crispy veg patty burger</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="burger">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Veg Cheese Burger <span class="veg-indicator"
+                                    title="Vegetarian">🟢</span></h3>
+                            <span class="menu-item-price">₹60</span>
+                        </div>
+                        <p class="menu-item-description">Veg burger with cheese</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="burger">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Chicken Burger <span class="non-veg-indicator"
+                                    title="Non-Vegetarian">🟤</span></h3>
+                            <span class="menu-item-price">₹70</span>
+                        </div>
+                        <p class="menu-item-description">Juicy chicken patty burger</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="burger">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Chicken Cheese Burger <span class="non-veg-indicator"
+                                    title="Non-Vegetarian">🟤</span></h3>
+                            <span class="menu-item-price">₹80</span>
+                        </div>
+                        <p class="menu-item-description">Chicken burger with cheese</p>
+                    </div>
+
+                    <!-- FRIED CHICKEN -->
+                    <div class="menu-item glass" data-category="chicken">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Chicken Wings (4pc) <span class="non-veg-indicator"
+                                    title="Non-Vegetarian">🟤</span></h3>
+                            <span class="menu-item-price">₹80</span>
+                        </div>
+                        <p class="menu-item-description">Crispy fried chicken wings</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="chicken">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Hot & Crispy (3pc) <span class="non-veg-indicator"
+                                    title="Non-Vegetarian">🟤</span></h3>
+                            <span class="menu-item-price">₹100</span>
+                        </div>
+                        <p class="menu-item-description">Spicy crispy chicken pieces</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="chicken">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Chicken Popcorn <span class="non-veg-indicator"
+                                    title="Non-Vegetarian">🟤</span></h3>
+                            <span class="menu-item-price">₹120</span>
+                        </div>
+                        <p class="menu-item-description">Bite-sized crispy chicken</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="chicken">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Chicken Nuggets (6pc) <span class="non-veg-indicator"
+                                    title="Non-Vegetarian">🟤</span></h3>
+                            <span class="menu-item-price">₹120</span>
+                        </div>
+                        <p class="menu-item-description">Golden fried chicken nuggets</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="chicken">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Classic French Fries <span class="veg-indicator"
+                                    title="Vegetarian">🟢</span></h3>
+                            <span class="menu-item-price">₹80</span>
+                        </div>
+                        <p class="menu-item-description">Crispy golden fries</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="chicken">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Peri Peri French Fries <span class="veg-indicator"
+                                    title="Vegetarian">🟢</span></h3>
+                            <span class="menu-item-price">₹90</span>
+                        </div>
+                        <p class="menu-item-description">Fries with peri peri seasoning</p>
+                    </div>
+
+                    <!-- STARTERS -->
+                    <div class="menu-item glass" data-category="starters">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Chilli Paneer <span class="veg-indicator"
+                                    title="Vegetarian">🟢</span></h3>
+                            <span class="menu-item-price">₹180</span>
+                        </div>
+                        <p class="menu-item-description">Spicy paneer in Indo-Chinese style</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="starters">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Paneer Manchurian <span class="veg-indicator"
+                                    title="Vegetarian">🟢</span></h3>
+                            <span class="menu-item-price">₹180</span>
+                        </div>
+                        <p class="menu-item-description">Paneer balls in tangy sauce</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="starters">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Chilli Chicken Dry <span class="non-veg-indicator"
+                                    title="Non-Vegetarian">🟤</span></h3>
+                            <span class="menu-item-price">₹180</span>
+                        </div>
+                        <p class="menu-item-description">Spicy dry chicken starter</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="starters">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Chilli Chicken Gravy <span class="non-veg-indicator"
+                                    title="Non-Vegetarian">🟤</span></h3>
+                            <span class="menu-item-price">₹200</span>
+                        </div>
+                        <p class="menu-item-description">Chicken in spicy gravy</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="starters">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Drums of Heaven <span class="non-veg-indicator"
+                                    title="Non-Vegetarian">🟤</span></h3>
+                            <span class="menu-item-price">₹200</span>
+                        </div>
+                        <p class="menu-item-description">Crispy chicken lollipops</p>
+                    </div>
+
+                    <!-- BEVERAGES -->
+                    <div class="menu-item glass" data-category="beverages">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Cold Coffee <span class="veg-indicator"
+                                    title="Vegetarian">🟢</span></h3>
+                            <span class="menu-item-price">₹70</span>
+                        </div>
+                        <p class="menu-item-description">Chilled coffee with ice cream</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="beverages">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Chocolate Shake <span class="veg-indicator"
+                                    title="Vegetarian">🟢</span></h3>
+                            <span class="menu-item-price">₹70</span>
+                        </div>
+                        <p class="menu-item-description">Rich chocolate milkshake</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="beverages">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Oreo Shake <span class="veg-indicator"
+                                    title="Vegetarian">🟢</span></h3>
+                            <span class="menu-item-price">₹80</span>
+                        </div>
+                        <p class="menu-item-description">Oreo cookies blended shake</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="beverages">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Blue Mojito <span class="veg-indicator"
+                                    title="Vegetarian">🟢</span></h3>
+                            <span class="menu-item-price">₹80</span>
+                        </div>
+                        <p class="menu-item-description">Refreshing blue mojito</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="beverages">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Mint Mojito <span class="veg-indicator"
+                                    title="Vegetarian">🟢</span></h3>
+                            <span class="menu-item-price">₹80</span>
+                        </div>
+                        <p class="menu-item-description">Classic mint mojito</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="beverages">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Tea <span class="veg-indicator" title="Vegetarian">🟢</span></h3>
+                            <span class="menu-item-price">₹15</span>
+                        </div>
+                        <p class="menu-item-description">Hot masala tea</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="beverages">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Coffee <span class="veg-indicator" title="Vegetarian">🟢</span>
+                            </h3>
+                            <span class="menu-item-price">₹20</span>
+                        </div>
+                        <p class="menu-item-description">Hot coffee</p>
+                    </div>
+
+                    <!-- COMBOS -->
+                    <div class="menu-item glass" data-category="combos">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Veg Pulao Combo <span class="veg-indicator"
+                                    title="Vegetarian">🟢</span></h3>
+                            <span class="menu-item-price">₹100</span>
+                        </div>
+                        <p class="menu-item-description">Veg Pulao + Matar Paneer + Salad</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="combos">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Paneer Butter Masala Combo <span class="veg-indicator"
+                                    title="Vegetarian">🟢</span></h3>
+                            <span class="menu-item-price">₹100</span>
+                        </div>
+                        <p class="menu-item-description">Jeera Rice + Paneer Butter Masala + Salad</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="combos">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Chicken Curry Combo <span class="non-veg-indicator"
+                                    title="Non-Vegetarian">🟤</span></h3>
+                            <span class="menu-item-price">₹100</span>
+                        </div>
+                        <p class="menu-item-description">Veg Pulao + Chicken Curry + Salad</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="combos">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Chilli Paneer Combo <span class="veg-indicator"
+                                    title="Vegetarian">🟢</span></h3>
+                            <span class="menu-item-price">₹100</span>
+                        </div>
+                        <p class="menu-item-description">Veg Fried Rice + Chilli Paneer + Salad</p>
+                    </div>
+
+                    <div class="menu-item glass" data-category="combos">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Chilli Chicken Combo <span class="non-veg-indicator"
+                                    title="Non-Vegetarian">🟤</span></h3>
+                            <span class="menu-item-price">₹100</span>
+                        </div>
+                        <p class="menu-item-description">Veg Fried Rice + Chilli Chicken + Salad</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. CHEF SPECIAL / HIGHLIGHTS -->
+        <section class="specials" id="specials">
+            <div class="container">
+                <h2 class="section-title center">Chef's Specials</h2>
+                <p class="section-subtitle">Handcrafted dishes that define our culinary excellence</p>
+
+                <div class="specials-grid">
+                    <div class="special-card glass">
+                        <div class="special-image">
+                            <img src="images/special-1.jpg" alt="Signature Biryani" loading="lazy">
+                            <span class="special-badge">Featured</span>
+                        </div>
+                        <div class="special-content">
+                            <h3 class="special-name">Royal Biryani Platter</h3>
+                            <p class="special-description">
+                                Our signature dish - aromatic basmati rice layered with tender meat,
+                                slow-cooked with saffron and traditional spices. A royal feast on a plate.
+                            </p>
+                            <div class="special-footer">
+                                <span class="special-price">₹550</span>
+                                <a href="#reservation" class="btn btn-small">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="special-card glass">
+                        <div class="special-image">
+                            <img src="images/hero-bg.jpg" alt="Tandoori Platter" loading="lazy">
+                            <span class="special-badge">Popular</span>
+                        </div>
+                        <div class="special-content">
+                            <h3 class="special-name">Tandoori Mixed Grill</h3>
+                            <p class="special-description">
+                                An assortment of our finest tandoori preparations - chicken tikka, seekh kebab,
+                                and paneer tikka, served sizzling with mint chutney.
+                            </p>
+                            <div class="special-footer">
+                                <span class="special-price">₹480</span>
+                                <a href="#reservation" class="btn btn-small">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="special-card glass">
+                        <div class="special-image">
+                            <img src="images/special-1.jpg" alt="Chocolate Indulgence" loading="lazy">
+                            <span class="special-badge">New</span>
+                        </div>
+                        <div class="special-content">
+                            <h3 class="special-name">Chocolate Indulgence</h3>
+                            <p class="special-description">
+                                A decadent chocolate sphere filled with mousse, fresh berries, and gold leaf.
+                                Watch it melt as warm chocolate sauce is poured over it.
+                            </p>
+                            <div class="special-footer">
+                                <span class="special-price">₹280</span>
+                                <a href="#reservation" class="btn btn-small">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. ONLINE ORDERING / RESERVATION -->
+        <section class="reservation" id="reservation">
+            <div class="container">
+                <div class="reservation-grid">
+                    <div class="ordering-section">
+                        <h2 class="section-title">Order Online</h2>
+                        <p class="ordering-text">Get your favorite dishes delivered to your doorstep</p>
+                        <div class="ordering-buttons">
+                            <a href="https://wa.me/919706287811" target="_blank" class="order-btn whatsapp">
+                                <span class="order-icon"><i class="fab fa-whatsapp"></i></span>
+                                <span>WhatsApp: +91 97062 87811, +91 60010 52700</span>
+                            </a>
+
+                        </div>
+                    </div>
+
+
+                </div>
+        </section>
+
+        <!-- 6. TESTIMONIALS / REVIEWS -->
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section-title center">What Our Guests Say</h2>
+                <p class="section-subtitle">Trusted by food lovers across the city</p>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card glass">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">
+                            "Absolutely incredible experience! The biryani was the best I've ever had,
+                            and the service was impeccable. Will definitely be coming back!"
+                        </p>
+                        <div class="testimonial-author">
+                            <strong>Priya Sharma</strong>
+                            <span>Food Blogger</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card glass">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">
+                            "The ambiance is perfect for a romantic dinner. The chef's special was
+                            outstanding, and the staff made us feel like family. Highly recommended!"
+                        </p>
+                        <div class="testimonial-author">
+                            <strong>Rahul Verma</strong>
+                            <span>Regular Customer</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card glass">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">
+                            "Every dish is crafted with love and attention to detail. The flavors are
+                            authentic and remind me of home. Dosti is now my go-to restaurant!"
+                        </p>
+                        <div class="testimonial-author">
+                            <strong>Anjali Patel</strong>
+                            <span>Food Enthusiast</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. GALLERY -->
+        <section class="gallery" id="gallery">
+            <div class="container">
+                <h2 class="section-title center">Gallery</h2>
+                <p class="section-subtitle">A visual journey through our culinary creations</p>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="images/hero-bg.jpg" alt="Restaurant ambiance" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/special-1.jpg" alt="Chef's special dish" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/hero-bg.jpg" alt="Tandoori preparation" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/special-1.jpg" alt="Dessert platter" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/hero-bg.jpg" alt="Interior dining" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/special-1.jpg" alt="Signature cocktails" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. LOCATION & CONTACT -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2 class="section-title center">Visit Us</h2>
+                <p class="section-subtitle">We'd love to serve you</p>
+
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-item glass">
+                            <h3>Address</h3>
+                            <p>Infront of GL Mart, Near D.K College<br>Mirza, Kamrup, Assam, 781125</p>
+                        </div>
+                        <div class="contact-item glass">
+                            <h3>Phone</h3>
+                            <p><a href="tel:+91 97062 87811">+91 97062 87811</a></p>
+                            <p><a href="tel:91 60010 52700">+91 60010 52700</a></p>
+                        </div>
+                        <div class="contact-item glass">
+                            <h3>Business Hours</h3>
+                            <table class="hours-table">
+                                <tr>
+                                    <td>Monday - Friday</td>
+                                    <td>11:00 AM - 11:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Saturday - Sunday</td>
+                                    <td>10:00 AM - 12:00 AM</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="contact-item glass">
+                            <h3>Email</h3>
+                            <p><a href="mailto:info@dostirestaurant.com">[EMAIL_ADDRESS]</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d467015.1970164355!2d91.25541113281251!3d26.091187500000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375a4100582857d9%3A0xe89c3dd0307ec6ad!2sDosti!5e1!3m2!1sen!2sin!4v1770649678521!5m2!1sen!2sin"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 9. FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Dosti Restaurant</h4>
+                    <p>Serving authentic flavors with love and tradition since 2009.</p>
+
+                    <p>Burger animation credits: Ismail Sahin @ <a
+                            href="https://www.vecteezy.com/video/29474913-burgers-food-rain-falling-delivery-fast-food-hamburger-falling-meat-burger-animation">Vecteezy</a>
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#reservation">Reservations</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <p></p>
+                        <a href="https://facebook.com">Facebook</a>
+                        <a href="https://instagram.com">Instagram</a>
+                        <a href="https://twitter.com">Twitter</a>
+                        <a href="https://youtube.com">YouTube</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dosti Restaurant. All rights reserved.</p>
+                <p class="footer-credit">Crafted with ❤️ for food lovers</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

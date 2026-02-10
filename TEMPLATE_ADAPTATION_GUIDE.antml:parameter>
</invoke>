@@ -1,0 +1,364 @@
+# Template Adaptation Guide
+
+## Overview
+
+This guide explains how to adapt this restaurant website template for another restaurant or food business.
+
+## Quick Adaptation Checklist
+
+- [ ] Update restaurant name and branding
+- [ ] Replace logo and images
+- [ ] Customize color scheme
+- [ ] Update menu items and prices
+- [ ] Modify contact information
+- [ ] Adjust business hours
+- [ ] Update social media links
+- [ ] Customize hero tagline
+- [ ] Change testimonials
+- [ ] Update Google Maps location
+
+## Step-by-Step Adaptation
+
+### 1. Branding & Identity
+
+#### Restaurant Name
+**Files to update:** `index.html`
+
+Search and replace "Dosti" with your restaurant name:
+- Navigation logo (Line 35)
+- Hero title (Line 48)
+- Footer (Line 475)
+- Page title (Line 8)
+
+#### Logo
+Replace `images/logo.jpg` with your restaurant's logo:
+- Recommended size: 200x200px
+- Format: JPG or PNG
+- Square aspect ratio works best
+
+### 2. Visual Identity
+
+#### Color Scheme
+
+**File:** `style.css` (Lines 20-30)
+
+The current theme uses warm browns and golds. Adapt for different cuisines:
+
+**Italian Restaurant:**
+```css
+--color-primary: #C8102E;        /* Italian Red */
+--color-accent: #009246;         /* Italian Green */
+--color-bg: #F5F5DC;             /* Beige */
+```
+
+**Japanese Restaurant:**
+```css
+--color-primary: #1A1A1A;        /* Black */
+--color-accent: #C41E3A;         /* Red */
+--color-bg: #F8F8F8;             /* Light Gray */
+```
+
+**Mexican Restaurant:**
+```css
+--color-primary: #D4AF37;        /* Gold */
+--color-accent: #E63946;         /* Red */
+--color-bg: #FFF8E7;             /* Cream */
+```
+
+**Cafe/Bakery:**
+```css
+--color-primary: #6F4E37;        /* Coffee Brown */
+--color-accent: #F4A460;         /* Sandy Brown */
+--color-bg: #FFF9F0;             /* Cream */
+```
+
+#### Typography
+
+**File:** `index.html` (Line 13)
+
+Current fonts:
+- Display: Playfair Display (elegant, serif)
+- Body: Inter (clean, modern)
+
+Alternative font combinations:
+
+**Modern & Minimal:**
+```html
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+```
+Update CSS:
+```css
+--font-display: 'Montserrat', sans-serif;
+--font-body: 'Open Sans', sans-serif;
+```
+
+**Classic & Traditional:**
+```html
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+```
+
+**Fun & Casual:**
+```html
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+```
+
+### 3. Content Adaptation
+
+#### Hero Section
+
+**File:** `index.html` (Lines 47-57)
+
+Customize the tagline for different restaurant types:
+
+- **Fine Dining:** "An Exquisite Culinary Journey"
+- **Casual Dining:** "Great Food, Great Times"
+- **Fast Casual:** "Fresh Food, Fast Service"
+- **Cafe:** "Your Daily Dose of Comfort"
+- **Bakery:** "Freshly Baked with Love"
+- **Pizza Place:** "Authentic Pizza, Delivered Hot"
+- **Sushi Bar:** "Traditional Japanese Excellence"
+
+#### Menu Structure
+
+**File:** `index.html` (Lines 100-213)
+
+Adapt menu categories for different cuisines:
+
+**Pizza Restaurant:**
+```html
+<button class="menu-tab active" data-category="all">All</button>
+<button class="menu-tab" data-category="pizzas">Pizzas</button>
+<button class="menu-tab" data-category="pastas">Pastas</button>
+<button class="menu-tab" data-category="salads">Salads</button>
+<button class="menu-tab" data-category="drinks">Drinks</button>
+```
+
+**Cafe:**
+```html
+<button class="menu-tab active" data-category="all">All</button>
+<button class="menu-tab" data-category="coffee">Coffee</button>
+<button class="menu-tab" data-category="breakfast">Breakfast</button>
+<button class="menu-tab" data-category="lunch">Lunch</button>
+<button class="menu-tab" data-category="pastries">Pastries</button>
+```
+
+**Sushi Bar:**
+```html
+<button class="menu-tab active" data-category="all">All</button>
+<button class="menu-tab" data-category="sushi">Sushi</button>
+<button class="menu-tab" data-category="sashimi">Sashimi</button>
+<button class="menu-tab" data-category="rolls">Rolls</button>
+<button class="menu-tab" data-category="appetizers">Appetizers</button>
+```
+
+### 4. Location-Specific Changes
+
+#### Currency
+
+Search for `₹` in `index.html` and replace with:
+- US: `$`
+- Europe: `€`
+- UK: `£`
+- Japan: `¥`
+
+#### Phone Format
+
+Update phone number format in `index.html`:
+- US: `(555) 123-4567`
+- UK: `020 1234 5678`
+- International: `+1 555 123 4567`
+
+#### Business Hours Format
+
+**File:** `index.html` (Lines 433-442)
+
+Adapt for different time formats:
+
+**12-hour (US):**
+```html
+<tr>
+    <td>Monday - Friday</td>
+    <td>11:00 AM - 10:00 PM</td>
+</tr>
+```
+
+**24-hour (Europe):**
+```html
+<tr>
+    <td>Monday - Friday</td>
+    <td>11:00 - 22:00</td>
+</tr>
+```
+
+### 5. Feature Customization
+
+#### Remove Sections
+
+If you don't need certain sections, simply delete them from `index.html`:
+
+**To remove Chef's Specials:**
+Delete lines 218-270
+
+**To remove Gallery:**
+Delete lines 372-395
+
+**To remove Testimonials:**
+Delete lines 344-370
+
+#### Add New Sections
+
+To add a new section (e.g., "Private Events"):
+
+```html
+<section class="events" id="events">
+    <div class="container">
+        <h2 class="section-title center">Private Events</h2>
+        <p class="section-subtitle">Host your special occasions with us</p>
+        
+        <div class="events-content">
+            <!-- Your content here -->
+        </div>
+    </div>
+</section>
+```
+
+Add corresponding CSS in `style.css`:
+```css
+.events {
+    padding: var(--spacing-xxl) 0;
+    background: var(--color-bg-alt);
+}
+```
+
+### 6. Ordering Integration
+
+#### Food Delivery Platforms
+
+**File:** `index.html` (Lines 281-295)
+
+Update links for your region:
+
+**US:**
+- Uber Eats: `https://www.ubereats.com/store/your-restaurant`
+- DoorDash: `https://www.doordash.com/store/your-restaurant`
+- Grubhub: `https://www.grubhub.com/restaurant/your-restaurant`
+
+**UK:**
+- Deliveroo: `https://deliveroo.co.uk/menu/your-restaurant`
+- Just Eat: `https://www.just-eat.co.uk/restaurants-your-restaurant`
+- Uber Eats: `https://www.ubereats.com/gb/store/your-restaurant`
+
+**Update button colors:**
+```css
+.ubereats {
+    background: #06C167;
+    color: var(--color-white);
+}
+
+.doordash {
+    background: #FF3008;
+    color: var(--color-white);
+}
+```
+
+### 7. SEO Optimization
+
+**File:** `index.html` (Lines 5-7)
+
+Update meta tags for each restaurant:
+
+```html
+<meta name="description" content="[Restaurant Name] - [Cuisine Type] in [City]. [Key Features]. Order online or reserve a table today!">
+<meta name="keywords" content="[cuisine type], restaurant, [city], [specialties], dining, food delivery">
+<title>[Restaurant Name] | [Cuisine Type] in [City]</title>
+```
+
+Example:
+```html
+<meta name="description" content="Mario's Pizzeria - Authentic Italian Pizza in Brooklyn. Wood-fired pizzas, fresh pasta, family recipes. Order online or reserve a table today!">
+<meta name="keywords" content="italian restaurant, pizza, brooklyn, wood-fired, pasta, italian food">
+<title>Mario's Pizzeria | Authentic Italian in Brooklyn</title>
+```
+
+## Testing Your Adapted Template
+
+1. **Visual Check:**
+   - Does the color scheme match your brand?
+   - Are all images relevant and high-quality?
+   - Is the typography readable and on-brand?
+
+2. **Content Check:**
+   - Is all placeholder text replaced?
+   - Are prices in the correct currency?
+   - Are business hours accurate?
+   - Is contact information correct?
+
+3. **Functionality Check:**
+   - Do all navigation links work?
+   - Does the mobile menu toggle?
+   - Does menu filtering work?
+   - Does the reservation form validate?
+
+4. **Mobile Check:**
+   - Test on actual mobile devices
+   - Check that text is readable
+   - Verify buttons are easily tappable
+   - Ensure images load properly
+
+## Common Adaptations
+
+### Fast Food / Quick Service
+
+- Emphasize speed and convenience
+- Add online ordering prominently
+- Simplify menu presentation
+- Use bright, energetic colors
+- Add "Order Now" CTAs throughout
+
+### Fine Dining
+
+- Use elegant typography
+- Emphasize ambiance and experience
+- Add dress code information
+- Include wine list or bar menu
+- Use sophisticated color palette
+- Add reservation requirements
+
+### Cafe / Coffee Shop
+
+- Highlight daily specials
+- Add breakfast/brunch focus
+- Include coffee menu
+- Emphasize cozy atmosphere
+- Add WiFi information
+- Include study/work-friendly messaging
+
+### Food Truck
+
+- Add location schedule
+- Emphasize mobility
+- Include social media for updates
+- Add "Find Us Today" section
+- Simplify to essential info
+- Make phone/text prominent
+
+## Final Checklist
+
+Before launching your adapted site:
+
+- [ ] All text is customized (no "Dosti" references)
+- [ ] All images are replaced with your own
+- [ ] Colors match your brand
+- [ ] Menu is complete and accurate
+- [ ] Prices are correct
+- [ ] Contact info is accurate
+- [ ] Social media links work
+- [ ] Google Maps shows correct location
+- [ ] Reservation form is configured
+- [ ] Mobile version looks good
+- [ ] All links work
+- [ ] SEO meta tags are updated
+
+---
+
+**Need help?** Refer to the CUSTOMIZATION_GUIDE.md for detailed instructions on specific changes.
